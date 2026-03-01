@@ -1,0 +1,7 @@
+# Environment files
+.env
+backend/.env
+frontend/.env
+
+# Optional (covers all env variants)
+*.env
