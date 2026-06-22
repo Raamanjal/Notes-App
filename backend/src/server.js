@@ -1,11 +1,13 @@
 import express from "express"
 import cors from "cors"
 import path from "path"
+import dotenv from "dotenv";
 
+import authRoutes from "./routes/authRoutes.js";
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
 import rateLimiter from "./middleware/rateLimiter.js";
-
+dotenv.config();
 
 const app = express();
 
@@ -26,8 +28,9 @@ app.use((req,res,next)=>{
     console.log(`Req method is ${req.method} and Req URL is ${req.url}`);
     next();
 })
-app.use(rateLimiter);
+// app.use(rateLimiter);
 
+app.use("/api/auth", authRoutes);
 app.use("/api/notes", notesRoutes);
 
 if (process.env.NODE_ENV === "production") {

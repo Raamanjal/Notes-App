@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Raamanjal/Notes-App/issues"
   },
-  "homepage": "https://github.com/Raamanjal/Notes-App#readme"
+  "homepage": "https://github.com/Raamanjal/Notes-App#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
 }
